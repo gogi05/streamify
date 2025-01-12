@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="800px" height="800px" viewBox="0 0 48 48">
+
+  <defs>
+    <style>
+      .bars { 
+        fill: none; 
+        stroke: #90CAF9; 
+        stroke-linecap: round; 
+        stroke-linejoin: round; 
+        stroke-width: 1.5px; 
+      }
+      .line-graph { 
+        fill: none; 
+        stroke: #64B5F6; 
+        stroke-width: 0.8px; 
+        stroke-linecap: round; 
+        stroke-linejoin: round; 
+      }
+      .intersection { 
+        fill: #42A5F5; 
+        stroke: none; 
+        r: 1.5px; 
+      }
+      .text { 
+        font-family: 'Poppins', sans-serif; 
+        font-size: 6px; 
+        fill: #37474F; 
+        font-weight: 600; 
+        text-anchor: middle; 
+      }
+    </style>
+  </defs>
+
+  <!-- Bars Group -->
+  <g>
+    <line class="bars" x1="13.1159" y1="11.7737" x2="13.1159" y2="36.2263"/>
+    <line class="bars" x1="8.8039" y1="16.8329" x2="8.8039" y2="31.1671"/>
+    <line class="bars" x1="4.5" y1="21.4705" x2="4.5" y2="26.5295"/>
+    <line class="bars" x1="17.4569" y1="16.8329" x2="17.4569" y2="31.1671"/>
+    <line class="bars" x1="21.9465" y1="21.4705" x2="21.9465" y2="26.5295"/>
+
+    <line class="bars" x1="34.6693" y1="11.7737" x2="34.6693" y2="36.2263"/>
+    <line class="bars" x1="30.3573" y1="16.8329" x2="30.3573" y2="31.1671"/>
+    <line class="bars" x1="26.0535" y1="21.4705" x2="26.0535" y2="26.5295"/>
+    <line class="bars" x1="39.0104" y1="16.8329" x2="39.0104" y2="31.1671"/>
+    <line class="bars" x1="43.5" y1="21.4705" x2="43.5" y2="26.5295"/>
+  </g>
+
+  <!-- Line Graph -->
+  <path class="line-graph" d="M4.5 24 L8.8 19 L13.1 15 L17.5 18 L21.9 22 L26 20 L30.3 18 L34.6 14 L39 17 L43.5 21" />
+
+  <!-- Intersection Points -->
+  <g>
+    <circle class="intersection" cx="4.5" cy="24" />
+    <circle class="intersection" cx="8.8" cy="19" />
+    <circle class="intersection" cx="13.1" cy="15" />
+    <circle class="intersection" cx="17.5" cy="18" />
+    <circle class="intersection" cx="21.9" cy="22" />
+    <circle class="intersection" cx="26" cy="20" />
+    <circle class="intersection" cx="30.3" cy="18" />
+    <circle class="intersection" cx="34.6" cy="14" />
+    <circle class="intersection" cx="39" cy="17" />
+    <circle class="intersection" cx="43.5" cy="21" />
+  </g>
+
+  <!-- Streamify Text -->
+  <text class="text" x="24" y="46" textLength="48">Streamify</text>
+
+</svg>
