@@ -1,0 +1,262 @@
+{
+  "keyMetrics": {
+    "totalUsers": 50000,
+    "activeUsers": 42000,
+    "totalStreams": 2500000,
+    "revenue": 1500000,
+    "topArtist": "The Weeknd"
+  },
+  "userGrowth": [
+    { "month": "Jan", "totalUsers": 40000, "activeUsers": 35000 },
+    { "month": "Feb", "totalUsers": 42000, "activeUsers": 38000 },
+    { "month": "Mar", "totalUsers": 43000, "activeUsers": 40000 },
+    { "month": "Apr", "totalUsers": 45000, "activeUsers": 42000 },
+    { "month": "May", "totalUsers": 46000, "activeUsers": 43000 },
+    { "month": "Jun", "totalUsers": 47000, "activeUsers": 44000 },
+    { "month": "Jul", "totalUsers": 48000, "activeUsers": 45000 },
+    { "month": "Aug", "totalUsers": 49000, "activeUsers": 46000 },
+    { "month": "Sep", "totalUsers": 50000, "activeUsers": 47000 },
+    { "month": "Oct", "totalUsers": 51000, "activeUsers": 48000 },
+    { "month": "Nov", "totalUsers": 52000, "activeUsers": 49000 },
+    { "month": "Dec", "totalUsers": 53000, "activeUsers": 50000 }
+  ],
+  "revenueDistribution": [
+    { "source": "Subscriptions", "revenue": 1200000 },
+    { "source": "Ads", "revenue": 300000 }
+  ],
+  "topStreamedSongs": [
+    {
+      "songName": "Blinding Lights",
+      "artist": "The Weeknd",
+      "streamCount": 450000
+    },
+    {
+      "songName": "Save Your Tears",
+      "artist": "The Weeknd",
+      "streamCount": 400000
+    },
+    { "songName": "Levitating", "artist": "Dua Lipa", "streamCount": 350000 },
+    {
+      "songName": "Stay",
+      "artist": "Kid LAROI & Justin Bieber",
+      "streamCount": 300000
+    },
+    {
+      "songName": "Montero (Call Me By Your Name)",
+      "artist": "Lil Nas X",
+      "streamCount": 250000
+    }
+  ],
+  "recentStreams": [
+    {
+      "songName": "Blinding Lights",
+      "artist": "The Weeknd",
+      "dateStreamed": "2025-01-01",
+      "streamCount": 10000,
+      "userId": 1
+    },
+    {
+      "songName": "Save Your Tears",
+      "artist": "The Weeknd",
+      "dateStreamed": "2025-01-02",
+      "streamCount": 20000,
+      "userId": 2
+    },
+    {
+      "songName": "Levitating",
+      "artist": "Dua Lipa",
+      "dateStreamed": "2025-01-03",
+      "streamCount": 15000,
+      "userId": 3
+    },
+    {
+      "songName": "Stay",
+      "artist": "Kid LAROI & Justin Bieber",
+      "dateStreamed": "2025-01-04",
+      "streamCount": 8000,
+      "userId": 4
+    },
+    {
+      "songName": "Montero (Call Me By Your Name)",
+      "artist": "Lil Nas X",
+      "dateStreamed": "2025-01-05",
+      "streamCount": 9500,
+      "userId": 5
+    },
+    {
+      "songName": "Peaches",
+      "artist": "Justin Bieber",
+      "dateStreamed": "2025-01-06",
+      "streamCount": 10000,
+      "userId": 6
+    },
+    {
+      "songName": "Good 4 U",
+      "artist": "Olivia Rodrigo",
+      "dateStreamed": "2025-01-07",
+      "streamCount": 12000,
+      "userId": 7
+    },
+    {
+      "songName": "Kiss Me More",
+      "artist": "Doja Cat",
+      "dateStreamed": "2025-01-08",
+      "streamCount": 11000,
+      "userId": 8
+    },
+    {
+      "songName": "Heat Waves",
+      "artist": "Glass Animals",
+      "dateStreamed": "2025-01-09",
+      "streamCount": 13000,
+      "userId": 9
+    },
+    {
+      "songName": "Industry Baby",
+      "artist": "Lil Nas X & Jack Harlow",
+      "dateStreamed": "2025-01-10",
+      "streamCount": 14000,
+      "userId": 10
+    },
+    {
+      "songName": "Levitating",
+      "artist": "Dua Lipa",
+      "dateStreamed": "2025-01-11",
+      "streamCount": 13500,
+      "userId": 11
+    },
+    {
+      "songName": "Blinding Lights",
+      "artist": "The Weeknd",
+      "dateStreamed": "2025-01-12",
+      "streamCount": 9500,
+      "userId": 12
+    },
+    {
+      "songName": "Save Your Tears",
+      "artist": "The Weeknd",
+      "dateStreamed": "2025-01-13",
+      "streamCount": 12000,
+      "userId": 13
+    },
+    {
+      "songName": "Stay",
+      "artist": "Kid LAROI & Justin Bieber",
+      "dateStreamed": "2025-01-14",
+      "streamCount": 10500,
+      "userId": 14
+    },
+    {
+      "songName": "Montero (Call Me By Your Name)",
+      "artist": "Lil Nas X",
+      "dateStreamed": "2025-01-15",
+      "streamCount": 9000,
+      "userId": 15
+    },
+    {
+      "songName": "Peaches",
+      "artist": "Justin Bieber",
+      "dateStreamed": "2025-01-16",
+      "streamCount": 11000,
+      "userId": 16
+    },
+    {
+      "songName": "Good 4 U",
+      "artist": "Olivia Rodrigo",
+      "dateStreamed": "2025-01-17",
+      "streamCount": 11500,
+      "userId": 17
+    },
+    {
+      "songName": "Kiss Me More",
+      "artist": "Doja Cat",
+      "dateStreamed": "2025-01-18",
+      "streamCount": 10000,
+      "userId": 18
+    },
+    {
+      "songName": "Heat Waves",
+      "artist": "Glass Animals",
+      "dateStreamed": "2025-01-19",
+      "streamCount": 11000,
+      "userId": 19
+    },
+    {
+      "songName": "Industry Baby",
+      "artist": "Lil Nas X & Jack Harlow",
+      "dateStreamed": "2025-01-20",
+      "streamCount": 12000,
+      "userId": 20
+    },
+    {
+      "songName": "Levitating",
+      "artist": "Dua Lipa",
+      "dateStreamed": "2025-01-21",
+      "streamCount": 12500,
+      "userId": 21
+    },
+    {
+      "songName": "Blinding Lights",
+      "artist": "The Weeknd",
+      "dateStreamed": "2025-01-22",
+      "streamCount": 13000,
+      "userId": 22
+    },
+    {
+      "songName": "Save Your Tears",
+      "artist": "The Weeknd",
+      "dateStreamed": "2025-01-23",
+      "streamCount": 14000,
+      "userId": 23
+    },
+    {
+      "songName": "Stay",
+      "artist": "Kid LAROI & Justin Bieber",
+      "dateStreamed": "2025-01-24",
+      "streamCount": 15000,
+      "userId": 24
+    },
+    {
+      "songName": "Montero (Call Me By Your Name)",
+      "artist": "Lil Nas X",
+      "dateStreamed": "2025-01-25",
+      "streamCount": 16000,
+      "userId": 25
+    },
+    {
+      "songName": "Blinding Lights",
+      "artist": "The Weeknd",
+      "dateStreamed": "2025-01-26",
+      "streamCount": 17000,
+      "userId": 26
+    },
+    {
+      "songName": "Save Your Tears",
+      "artist": "The Weeknd",
+      "dateStreamed": "2025-01-27",
+      "streamCount": 18000,
+      "userId": 27
+    },
+    {
+      "songName": "Levitating",
+      "artist": "Dua Lipa",
+      "dateStreamed": "2025-01-28",
+      "streamCount": 19000,
+      "userId": 28
+    },
+    {
+      "songName": "Stay",
+      "artist": "Kid LAROI & Justin Bieber",
+      "dateStreamed": "2025-01-29",
+      "streamCount": 20000,
+      "userId": 29
+    },
+    {
+      "songName": "Montero (Call Me By Your Name)",
+      "artist": "Lil Nas X",
+      "dateStreamed": "2025-01-30",
+      "streamCount": 21000,
+      "userId": 30
+    }
+  ]
+}
