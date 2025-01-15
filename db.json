@@ -1,28 +1,31 @@
 {
-  "keyMetrics": {
-    "totalUsers": 50000,
-    "activeUsers": 42000,
-    "totalStreams": 2500000,
-    "revenue": 1500000,
-    "topArtist": "The Weeknd"
-  },
+  "topArtist": [{ "name": "The Weekend" }, { "img": 42000 }],
+  "keyMetrics": [
+    { "name": "Total Users", "value": 50000 },
+    { "name": "Active Users", "value": 42000 },
+    { "name": "Total Streams", "value": 2500000 },
+    { "name": "Revenue", "value": 1500000 },
+    { "name": "Top Artist", "value": "The Weekend" }
+  ],
   "userGrowth": [
-    { "month": "Jan", "totalUsers": 40000, "activeUsers": 35000 },
-    { "month": "Feb", "totalUsers": 42000, "activeUsers": 38000 },
-    { "month": "Mar", "totalUsers": 43000, "activeUsers": 40000 },
-    { "month": "Apr", "totalUsers": 45000, "activeUsers": 42000 },
-    { "month": "May", "totalUsers": 46000, "activeUsers": 43000 },
-    { "month": "Jun", "totalUsers": 47000, "activeUsers": 44000 },
-    { "month": "Jul", "totalUsers": 48000, "activeUsers": 45000 },
-    { "month": "Aug", "totalUsers": 49000, "activeUsers": 46000 },
-    { "month": "Sep", "totalUsers": 50000, "activeUsers": 47000 },
-    { "month": "Oct", "totalUsers": 51000, "activeUsers": 48000 },
-    { "month": "Nov", "totalUsers": 52000, "activeUsers": 49000 },
-    { "month": "Dec", "totalUsers": 53000, "activeUsers": 50000 }
+    { "month": "Jan", "totalUsers": 40000, "activeUsers": 30000 },
+    { "month": "Feb", "totalUsers": 42000, "activeUsers": 34000 },
+    { "month": "Mar", "totalUsers": 41000, "activeUsers": 32000 },
+    { "month": "Apr", "totalUsers": 45000, "activeUsers": 36000 },
+    { "month": "May", "totalUsers": 44000, "activeUsers": 35000 },
+    { "month": "Jun", "totalUsers": 47000, "activeUsers": 39000 },
+    { "month": "Jul", "totalUsers": 46000, "activeUsers": 37000 },
+    { "month": "Aug", "totalUsers": 49000, "activeUsers": 41000 },
+    { "month": "Sep", "totalUsers": 48000, "activeUsers": 40000 },
+    { "month": "Oct", "totalUsers": 51000, "activeUsers": 43000 },
+    { "month": "Nov", "totalUsers": 50000, "activeUsers": 42000 },
+    { "month": "Dec", "totalUsers": 53000, "activeUsers": 46000 }
   ],
   "revenueDistribution": [
     { "source": "Subscriptions", "revenue": 1200000 },
-    { "source": "Ads", "revenue": 300000 }
+    { "source": "Ads", "revenue": 300000 },
+    { "source": "Merchandise", "revenue": 150000 },
+    { "source": "Affiliate Marketing", "revenue": 200000 }
   ],
   "topStreamedSongs": [
     {
