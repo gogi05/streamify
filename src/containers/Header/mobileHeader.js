@@ -12,13 +12,9 @@ const MobileHeader = () => {
 
   return (
     <div className="relative md:hidden flex items-center justify-between px-4 h-16 w-full">
-      <a
-        href="#"
-        className="flex items-center text-lg font-semibold"
-        aria-label="Streamify Home"
-      >
+      <button type="button" className="flex items-center text-lg font-semibold">
         <StreamifyIcon className="h-8 w-8" />
-      </a>
+      </button>
 
       <button
         aria-label="Toggle navigation menu"
