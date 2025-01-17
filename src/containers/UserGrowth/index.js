@@ -13,7 +13,7 @@ const UserGrowth = () => {
 
   return (
     <CardLayout>
-      <CardHeading>User Growth</CardHeading>
+      <CardHeading className="text-lg">User Growth</CardHeading>
       <CardDescription>
         Showing the growth in the number of total users and active users over
         the past 12 months

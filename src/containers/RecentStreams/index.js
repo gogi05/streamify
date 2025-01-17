@@ -1,71 +1,117 @@
-import { useState, useMemo } from "react";
-import useFetchData from "../../hooks/useFetchData";
+import { useState, useEffect, useMemo } from "react";
+import useFetchData from "../../hooks/useFetchData"; // Keep this hook as is
+import { CardLayout } from "../../components/Card";
 import useDebounce from "../../hooks/useDebounce";
-import RecentStreamsTable from "./recentStreamsTable";
+import RecentStreamsTable from "./recentStreamsTable"; // Ensure your table component is set up correctly
 
 const RecentStreams = () => {
-  const { isLoading, data, error } = useFetchData(
-    "http://localhost:5000/recentStreams"
-  );
-
+  const [currentPage, setCurrentPage] = useState(1);
+  const [pageSize] = useState(10);
   const [rawSearchValue, setRawSearchValue] = useState("");
+  const [debouncedSearchValue, setDebouncedSearchValue] = useState("");
+  const [hasMoreData, setHasMoreData] = useState(true);
 
-  // Debounced value for search
-  const debouncedSearchValue = useDebounce(rawSearchValue, 300);
+  // Debounce the search input
+  const debouncedSearch = useDebounce((value) => {
+    setDebouncedSearchValue(value);
+    setCurrentPage(1); // Reset to first page when search changes
+  }, 300);
 
   const onChangeHandler = (e) => {
-    setRawSearchValue(e.target.value);
+    const value = e.target.value;
+    setRawSearchValue(value);
+    debouncedSearch(value);
   };
 
+  // Fetch data using the generic hook
+  const {
+    isLoading,
+    data = [],
+    error,
+  } = useFetchData("http://localhost:5000/recentStreams");
+
+  // Filter data based on search term
   const filteredData = useMemo(() => {
+    return data.filter(
+      (item) =>
+        item.artist
+          ?.toLowerCase()
+          .includes(debouncedSearchValue.toLowerCase()) ||
+        item.song?.toLowerCase().includes(debouncedSearchValue.toLowerCase())
+    );
+  }, [data, debouncedSearchValue]);
+
+  // Check if there's more data based on the filtered dataset
+  useEffect(() => {
+    setHasMoreData(filteredData.length > currentPage * pageSize);
+  }, [filteredData, currentPage, pageSize]);
+
+  // Handle pagination
+  const handlePagination = (newPage) => {
+    if (newPage > 0 && newPage <= Math.ceil(filteredData.length / pageSize)) {
+      setCurrentPage(newPage);
+    }
+  };
+
+  // Render content
+  const renderContent = () => {
     if (isLoading) {
-      return null;
+      return <div>Loading Data...</div>;
     }
+
     if (error) {
-      return [];
+      return <div>An error occurred while fetching data.</div>;
     }
 
-    if (!Array.isArray(data)) {
-      return [];
+    if (filteredData.length === 0) {
+      return <div>No results found</div>;
     }
 
-    if (!debouncedSearchValue.trim()) {
-      return data;
-    }
+    const paginatedData = filteredData.slice(
+      (currentPage - 1) * pageSize,
+      currentPage * pageSize
+    );
 
-    // Apply filter with debounced value
-    const searchTerm = debouncedSearchValue.toLowerCase().trim();
-
-    return data.filter((entry) => {
-      const songName = String(entry?.songName || "").toLowerCase();
-      const artist = String(entry?.artist || "").toLowerCase();
-
-      return songName.includes(searchTerm) || artist.includes(searchTerm);
-    });
-  }, [data, debouncedSearchValue, isLoading, error]);
+    return (
+      <div>
+        <RecentStreamsTable data={paginatedData} />
+      </div>
+    );
+  };
 
   return (
-    <div className="p-4">
+    <CardLayout>
       <input
-        className="w-full sm:w-80 p-2 mb-4 border rounded"
-        placeholder="Search for the song or artist name here"
+        type="text"
         value={rawSearchValue}
         onChange={onChangeHandler}
+        placeholder="Search streams..."
+        className="mb-4 p-2 border rounded w-full md:w-1/3"
       />
 
-      {isLoading && <div>Loading Data...</div>}
-      {error && <div>An error occurred while fetching data.</div>}
+      {renderContent()}
 
-      {!isLoading && !error && (
-        <>
-          {filteredData && filteredData.length > 0 ? (
-            <RecentStreamsTable data={filteredData} />
-          ) : (
-            <div>No results found</div>
-          )}
-        </>
-      )}
-    </div>
+      {/* Pagination controls */}
+      <div className="flex justify-between mt-4">
+        <button
+          onClick={() => handlePagination(currentPage - 1)}
+          disabled={currentPage === 1}
+          className="px-4 py-2 bg-blue-500 text-white rounded disabled:bg-gray-400"
+        >
+          Previous
+        </button>
+
+        <span className="flex items-center">Page {currentPage}</span>
+
+        <button
+          onClick={() => handlePagination(currentPage + 1)}
+          disabled={!hasMoreData}
+          className="px-4 py-2 bg-blue-500 text-white rounded disabled:bg-gray-400"
+        >
+          Next
+        </button>
+      </div>
+    </CardLayout>
   );
 };
 

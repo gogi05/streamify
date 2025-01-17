@@ -1,5 +1,7 @@
 const CardHeading = ({ children, className = "" }) => {
-  return <div className={`card-header ${className}`}>{children}</div>;
+  return (
+    <h3 className={`card-header font-semibold  ${className}`}>{children}</h3>
+  );
 };
 
 export default CardHeading;

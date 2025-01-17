@@ -3,6 +3,8 @@ import {
   CardHeading,
   CardDescription,
 } from "../../components/Card";
+import SkeletonLoader from "../../components/Loader";
+
 import useFetchData from "../../hooks/useFetchData";
 import TopStreamedSongsChart from "./topStreamedSongsChart";
 
@@ -13,8 +15,11 @@ const TopStreamedSongs = () => {
 
   return (
     <CardLayout>
-      <CardHeading>Top Streamed Songs</CardHeading>
-      <CardDescription>Streams over the past 30 days</CardDescription>
+      <CardHeading className="text-lg">Top Streamed Songs</CardHeading>
+      <CardDescription>
+        Chart-Toppers with the Most Streams in the Last 30 Days
+      </CardDescription>
+      <SkeletonLoader />
       {isLoading && "Loading Data"}
       {error && "It is an error"}
       <TopStreamedSongsChart data={data} />

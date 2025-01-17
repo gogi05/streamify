@@ -15,8 +15,10 @@ const RevenueDistribution = () => {
 
   return (
     <CardLayout>
-      <CardHeading>Revenue Distribution</CardHeading>
-      <CardDescription>Revenue by Source for 2024</CardDescription>
+      <CardHeading className="text-lg">Revenue Distribution</CardHeading>
+      <CardDescription>
+        Exploring the Impact of Each Revenue Stream on Growth
+      </CardDescription>
       {isLoading && <p>Loading data...</p>}
       {error && <p>There was an error fetching the data.</p>}
       <RevenueDistributionChart data={data} />

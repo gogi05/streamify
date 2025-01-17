@@ -1,7 +1,7 @@
-import { useState, useCallback } from "react";
+import React, { useState, useCallback } from "react";
 import { PieChart, Pie, Tooltip, Sector } from "recharts";
+import { CustomTooltip } from "../../components/Chart";
 
-// Helper to calculate total revenue
 const calculateTotalRevenue = (data) => {
   return data?.reduce((sum, item) => sum + item.revenue, 0) || 0;
 };
@@ -34,96 +34,102 @@ const renderActiveShape = (props) => {
   );
 };
 
-// Custom Tooltip
-const CustomTooltip = ({ active, payload, totalRevenue }) => {
-  if (active && payload && payload.length) {
-    const { name, revenue: value } = payload[0].payload;
-    const percentage = value
-      ? ((value / totalRevenue) * 100).toFixed(2)
-      : "0.00";
-
-    return (
-      <div
-        style={{
-          backgroundColor: "#f5f5f5",
-          border: "1px solid #ccc",
-          padding: "10px",
-          borderRadius: "5px",
-        }}
-      >
-        <h4 style={{ margin: 0, color: "#333" }}>{name}</h4>
-        <div style={{ marginTop: "5px", color: "#666" }}>
-          <p style={{ margin: "5px 0" }}>
-            <strong>Percentage:</strong> {percentage}%
-          </p>
-          <p style={{ margin: "5px 0" }}>
-            <strong>Revenue:</strong> ${value ? value.toLocaleString() : "0"}
-          </p>
-        </div>
-      </div>
-    );
-  }
-
-  return null;
-};
-
 const RevenueDistributionChart = ({ data }) => {
   const [activeIndex, setActiveIndex] = useState(0);
-  const onPieEnter = useCallback(
-    (_, index) => {
-      setActiveIndex(index);
-    },
-    [setActiveIndex]
-  );
-
   const totalRevenue = calculateTotalRevenue(data);
 
-  return (
-    <PieChart width={800} height={800}>
-      <text
-        x={400}
-        y={400}
-        textAnchor="middle"
-        dominantBaseline="middle"
-        fontSize={20}
-        fill="#333"
-      >
-        ${totalRevenue.toLocaleString()}
-      </text>
-      <Pie
-        activeIndex={activeIndex}
-        activeShape={renderActiveShape}
-        data={data}
-        cx={400}
-        cy={400}
-        innerRadius={120}
-        outerRadius={200}
-        fill="#8884d8"
-        dataKey="revenue"
-        nameKey="source"
-        onMouseEnter={onPieEnter}
-        labelLine={false}
-        label={({ cx, cy, midAngle, innerRadius, outerRadius, percent }) => {
-          const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
-          const x = cx + radius * Math.cos(-midAngle * (Math.PI / 180));
-          const y = cy + radius * Math.sin(-midAngle * (Math.PI / 180));
+  const onPieEnter = useCallback((_, index) => {
+    setActiveIndex(index);
+  }, []);
 
-          return (
-            <text
-              x={x}
-              y={y}
-              fill="white"
-              textAnchor={x > cx ? "start" : "end"}
-              dominantBaseline="central"
-              style={{ fontSize: 14, fontWeight: "bold" }}
-            >
-              {`${(percent * 100).toFixed(0)}%`}
-            </text>
-          );
-        }}
+  // Custom wrapper for the tooltip to handle revenue-specific formatting
+  const CustomTooltipWrapper = (props) => {
+    if (!props.active || !props.payload || !props.payload.length) {
+      return null;
+    }
+
+    const { name, revenue } = props.payload[0].payload;
+    const percentage = ((revenue / totalRevenue) * 100).toFixed(2);
+
+    // Transform the data to match our CustomTooltip format
+    const modifiedPayload = [
+      {
+        name: "Revenue",
+        value: revenue,
+        color: props.payload[0].color,
+        formattedValue: `$${revenue.toLocaleString()}`,
+      },
+      {
+        name: "Percentage",
+        value: percentage,
+        color: "#666",
+        formattedValue: `${percentage}%`,
+      },
+    ];
+
+    return (
+      <CustomTooltip
+        {...props}
+        payload={modifiedPayload}
+        label={name}
+        labelFormatter={(label) => `Source: ${label}`}
       />
-      <Tooltip content={<CustomTooltip totalRevenue={totalRevenue} />} />
-    </PieChart>
+    );
+  };
+
+  return (
+    <div className="flex justify-center items-center">
+      <PieChart width={400} height={400}>
+        <text
+          x={200}
+          y={200}
+          textAnchor="middle"
+          dominantBaseline="middle"
+          className="text-gray-600"
+        >
+          <tspan x={200} dy="-10" className="text-sm">
+            Total Revenue
+          </tspan>
+          <tspan x={200} dy="32" className="text-xl font-medium">
+            ${totalRevenue.toLocaleString()}
+          </tspan>
+        </text>
+
+        <Pie
+          activeIndex={activeIndex}
+          activeShape={renderActiveShape}
+          data={data}
+          cx={200}
+          cy={200}
+          innerRadius={80}
+          outerRadius={120}
+          fill="#8884d8"
+          dataKey="revenue"
+          nameKey="source"
+          onMouseEnter={onPieEnter}
+          labelLine={false}
+          label={({ cx, cy, midAngle, innerRadius, outerRadius, percent }) => {
+            const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
+            const x = cx + radius * Math.cos(-midAngle * (Math.PI / 180));
+            const y = cy + radius * Math.sin(-midAngle * (Math.PI / 180));
+
+            return (
+              <text
+                x={x}
+                y={y}
+                fill="white"
+                textAnchor={x > cx ? "start" : "end"}
+                dominantBaseline="central"
+                className="text-xs font-bold"
+              >
+                {`${(percent * 100).toFixed(0)}%`}
+              </text>
+            );
+          }}
+        />
+        <Tooltip content={<CustomTooltipWrapper />} />
+      </PieChart>
+    </div>
   );
 };
 

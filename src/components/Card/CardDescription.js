@@ -1,5 +1,5 @@
 const CardDescription = ({ children, className = "" }) => {
-  return <div className={`card-description ${className}`}>{children}</div>;
+  return <p className={`card-description text-sm ${className}`}>{children}</p>;
 };
 
 export default CardDescription;
