@@ -9,22 +9,20 @@ import {
 } from "recharts";
 
 import { CustomTooltip } from "../../components/Chart";
+import { tooltipFormatters } from "./helpers";
+import {
+  USER_CHART_COLORS,
+  USER_CHART_PADDING,
+  USER_CHART_HEIGHT,
+} from "./constants";
 
 const UserGrowthChart = ({ data }) => {
-  const tooltipFormatters = {
-    labelFormatter: (label) => `Month: ${label}`,
-    valueFormatter: (value) => value.toLocaleString(),
-  };
-
   return (
-    <ResponsiveContainer width="100%" height={360}>
-      <LineChart
-        data={data}
-        margin={{ top: 10, right: 30, left: 0, bottom: 0 }}
-      >
+    <ResponsiveContainer width="100%" height={USER_CHART_HEIGHT}>
+      <LineChart data={data} margin={USER_CHART_PADDING.yAxis}>
         <XAxis
           dataKey="month"
-          padding={{ left: 30, right: 30 }}
+          padding={USER_CHART_PADDING.xAxis}
           className="text-sm"
         />
         <YAxis className="text-sm" />
@@ -32,14 +30,14 @@ const UserGrowthChart = ({ data }) => {
         <Line
           type="monotone"
           dataKey="totalUsers"
-          stroke="#8884d8"
+          stroke={USER_CHART_COLORS.totalUsersLine}
           activeDot={{ r: 6 }}
           name="Total Users"
         />
         <Line
           type="monotone"
           dataKey="activeUsers"
-          stroke="#82ca9d"
+          stroke={USER_CHART_COLORS.activeUsersLine}
           activeDot={{ r: 6 }}
           name="Active Users"
         />

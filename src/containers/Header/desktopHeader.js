@@ -13,7 +13,7 @@ const Header = () => {
         <span>Streamify</span>
       </button>
 
-      <div className="flex gap-6 justify-center flex-1 font-semibold">
+      <div className="flex gap-6 justify-end flex-1 font-semibold">
         {NAV_LINKS.map((link) => (
           <a
             key={link.name}
