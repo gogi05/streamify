@@ -4,7 +4,7 @@
     { "name": "Total Users", "value": 50000 },
     { "name": "Active Users", "value": 42000 },
     { "name": "Total Streams", "value": 2500000 },
-    { "name": "Revenue", "value": 1500000 },
+    { "name": "Revenue", "value": 1850000 },
     { "name": "Top Artist", "value": "The Weekend" }
   ],
   "userGrowth": [
@@ -23,7 +23,7 @@
   ],
   "revenueDistribution": [
     { "source": "Subscriptions", "revenue": 1200000 },
-    { "source": "Ads", "revenue": 300000 },
+    { "source": "Advertisement", "revenue": 300000 },
     { "source": "Merchandise", "revenue": 150000 },
     { "source": "Affiliate Marketing", "revenue": 200000 }
   ],
@@ -65,7 +65,7 @@
       "dateStreamed": "2025-01-02",
       "streamCount": 20000,
       "userId": 2,
-      "revenueSource": "Ads"
+      "revenueSource": "Advertisement"
     },
     {
       "songName": "Levitating",
@@ -97,7 +97,7 @@
       "dateStreamed": "2025-01-06",
       "streamCount": 10000,
       "userId": 6,
-      "revenueSource": "Ads"
+      "revenueSource": "Advertisement"
     },
     {
       "songName": "Good 4 U",
@@ -129,7 +129,7 @@
       "dateStreamed": "2025-01-10",
       "streamCount": 14000,
       "userId": 10,
-      "revenueSource": "Ads"
+      "revenueSource": "Advertisement"
     },
     {
       "songName": "As It Was",
@@ -169,7 +169,7 @@
       "dateStreamed": "2025-01-15",
       "streamCount": 15000,
       "userId": 15,
-      "revenueSource": "Ads"
+      "revenueSource": "Advertisement"
     },
     {
       "songName": "Levitating",
@@ -201,7 +201,7 @@
       "dateStreamed": "2025-01-19",
       "streamCount": 17000,
       "userId": 19,
-      "revenueSource": "Ads"
+      "revenueSource": "Advertisement"
     },
     {
       "songName": "Industry Baby",
@@ -233,7 +233,7 @@
       "dateStreamed": "2025-01-23",
       "streamCount": 22000,
       "userId": 23,
-      "revenueSource": "Ads"
+      "revenueSource": "Advertisement"
     },
     {
       "songName": "Levitating",
@@ -265,7 +265,7 @@
       "dateStreamed": "2025-01-27",
       "streamCount": 15000,
       "userId": 27,
-      "revenueSource": "Ads"
+      "revenueSource": "Advertisement"
     },
     {
       "songName": "Industry Baby",

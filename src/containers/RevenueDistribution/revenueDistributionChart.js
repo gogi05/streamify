@@ -1,10 +1,12 @@
-import React, { useState, useCallback } from "react";
-import { PieChart, Pie, Tooltip, Sector } from "recharts";
-import { CustomTooltip } from "../../components/Chart";
-
-const calculateTotalRevenue = (data) => {
-  return data?.reduce((sum, item) => sum + item.revenue, 0) || 0;
-};
+import React, { useState, useCallback, useMemo } from "react";
+import { PieChart, Pie, Tooltip, Sector, Text } from "recharts";
+import CustomTooltipComponent from "../../components/Tooltip";
+import {
+  calculateTotalRevenue,
+  assignColorsToData,
+  formatTooltipPayload,
+} from "./helpers";
+import { REVENUE_CHART_CONFIG } from "./constants";
 
 const renderActiveShape = (props) => {
   const { cx, cy, innerRadius, outerRadius, startAngle, endAngle, fill } =
@@ -34,100 +36,76 @@ const renderActiveShape = (props) => {
   );
 };
 
+const TooltipContent = ({ active, payload, totalRevenue }) => {
+  if (!active) return null;
+
+  const formattedPayload = formatTooltipPayload(payload, totalRevenue);
+  return (
+    <CustomTooltipComponent
+      payload={formattedPayload}
+      label={payload[0].payload.source}
+      active={active}
+    />
+  );
+};
+
 const RevenueDistributionChart = ({ data }) => {
   const [activeIndex, setActiveIndex] = useState(0);
-  const totalRevenue = calculateTotalRevenue(data);
+
+  const totalRevenue = useMemo(() => calculateTotalRevenue(data), [data]);
+  const coloredData = useMemo(() => assignColorsToData(data), [data]);
 
   const onPieEnter = useCallback((_, index) => {
     setActiveIndex(index);
   }, []);
 
-  // Custom wrapper for the tooltip to handle revenue-specific formatting
-  const CustomTooltipWrapper = (props) => {
-    if (!props.active || !props.payload || !props.payload.length) {
-      return null;
-    }
-
-    const { name, revenue } = props.payload[0].payload;
-    const percentage = ((revenue / totalRevenue) * 100).toFixed(2);
-
-    // Transform the data to match our CustomTooltip format
-    const modifiedPayload = [
-      {
-        name: "Revenue",
-        value: revenue,
-        color: props.payload[0].color,
-        formattedValue: `$${revenue.toLocaleString()}`,
-      },
-      {
-        name: "Percentage",
-        value: percentage,
-        color: "#666",
-        formattedValue: `${percentage}%`,
-      },
-    ];
-
-    return (
-      <CustomTooltip
-        {...props}
-        payload={modifiedPayload}
-        label={name}
-        labelFormatter={(label) => `Source: ${label}`}
-      />
-    );
-  };
-
   return (
     <div className="flex justify-center items-center">
-      <PieChart width={400} height={400}>
-        <text
-          x={200}
-          y={200}
+      <PieChart
+        width={REVENUE_CHART_CONFIG.width}
+        height={REVENUE_CHART_CONFIG.height}
+      >
+        <Text
+          x={REVENUE_CHART_CONFIG.centerX}
+          y={REVENUE_CHART_CONFIG.centerY - 20}
           textAnchor="middle"
           dominantBaseline="middle"
           className="text-gray-600"
         >
-          <tspan x={200} dy="-10" className="text-sm">
+          <tspan x={REVENUE_CHART_CONFIG.centerX} dy="-10" className="text-sm">
             Total Revenue
           </tspan>
-          <tspan x={200} dy="32" className="text-xl font-medium">
+          <tspan
+            x={REVENUE_CHART_CONFIG.centerX}
+            dy="32"
+            className="text-xl font-medium"
+          >
             ${totalRevenue.toLocaleString()}
           </tspan>
-        </text>
-
+        </Text>
         <Pie
           activeIndex={activeIndex}
           activeShape={renderActiveShape}
-          data={data}
-          cx={200}
-          cy={200}
-          innerRadius={80}
-          outerRadius={120}
-          fill="#8884d8"
+          data={coloredData}
+          cx={REVENUE_CHART_CONFIG.centerX}
+          cy={REVENUE_CHART_CONFIG.centerY}
+          innerRadius={REVENUE_CHART_CONFIG.innerRadius}
+          outerRadius={REVENUE_CHART_CONFIG.outerRadius}
           dataKey="revenue"
           nameKey="source"
           onMouseEnter={onPieEnter}
           labelLine={false}
-          label={({ cx, cy, midAngle, innerRadius, outerRadius, percent }) => {
-            const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
-            const x = cx + radius * Math.cos(-midAngle * (Math.PI / 180));
-            const y = cy + radius * Math.sin(-midAngle * (Math.PI / 180));
-
-            return (
-              <text
-                x={x}
-                y={y}
-                fill="white"
-                textAnchor={x > cx ? "start" : "end"}
-                dominantBaseline="central"
-                className="text-xs font-bold"
-              >
-                {`${(percent * 100).toFixed(0)}%`}
-              </text>
-            );
-          }}
+          label={null}
         />
-        <Tooltip content={<CustomTooltipWrapper />} />
+        <Tooltip
+          content={({ active, payload }) => (
+            <TooltipContent
+              active={active}
+              payload={payload}
+              totalRevenue={totalRevenue}
+            />
+          )}
+        />
       </PieChart>
     </div>
   );

@@ -1,11 +1,8 @@
-export const USER_CHART_COLORS = {
-  totalUsersLine: "#8884d8",
-  activeUsersLine: "#82ca9d",
-};
-
-export const USER_CHART_PADDING = {
-  xAxis: { left: 30, right: 30 },
-  yAxis: { top: 10, right: 30, left: 0, bottom: 0 },
+export const USER_CHART_CONFIG = {
+  X_AXIS: { left: 30, right: 30 },
+  Y_AXIS: { top: 10, right: 30, left: 0, bottom: 0 },
+  RADIUS: 6,
+  NAMES: { TOTAL_USERS: "Total Users", ACTIVE_USERS: "Active Users" },
 };
 
 export const MONTHS = {

@@ -1,17 +1,19 @@
-import { CustomTooltip } from "../../components/Chart";
-import { formatTooltipData, tooltipFormatters } from "./helpers";
+import Tooltip from "../../components/Tooltip";
+import { formatTooltipData } from "./helpers";
+import { TOOLTIP_FORMATTER } from "../constants"; // Import from constants
 
-const CustomTooltipWrapper = (props) => {
+const TooltipWrapper = (props) => {
   const modifiedPayload = formatTooltipData(props);
   if (!modifiedPayload) return null;
 
   return (
-    <CustomTooltip
+    <Tooltip
       {...props}
       payload={modifiedPayload}
-      {...tooltipFormatters}
+      labelFormatter={TOOLTIP_FORMATTER.LABEL_FORMATTER}
+      valueFormatter={TOOLTIP_FORMATTER.VALUE_FORMATTER}
     />
   );
 };
 
-export default CustomTooltipWrapper;
+export default TooltipWrapper;
