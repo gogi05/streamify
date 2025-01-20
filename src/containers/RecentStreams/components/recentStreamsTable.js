@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { ReactComponent as SortIcon } from "../../assets/sortIcon.svg";
-import { TABLE_HEADING, SORT_INITIAL_STATE } from "./constants";
+import { ReactComponent as SortIcon } from "../../../assets/sortIcon.svg";
+import { TABLE_HEADING, SORT_INITIAL_STATE } from "../constants";
 
 const TableHeaders = ({ onSort, sortConfig }) => (
   <tr>
@@ -81,7 +81,7 @@ const RecentStreamsTable = ({ data }) => {
   });
 
   return (
-    <table className="min-w-full border-collapse">
+    <table className="min-w-full border-collapse" style={{ height: "450px" }}>
       <thead className="bg-gray-50">
         <TableHeaders onSort={handleSort} sortConfig={sortConfig} />
       </thead>

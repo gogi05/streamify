@@ -15,7 +15,7 @@ function App() {
     <div className="App">
       <Suspense fallback={<LayoutSkeletonLoader />}>
         <Header />
-        <div className="mx-auto bg-slate-100 flex flex-1 flex-col gap-4 p-4 md:gap-8 md:p-8">
+        <div className="mx-auto bg-background flex flex-1 flex-col gap-4 p-4 md:gap-8 md:p-8">
           <KeyMetrics />
           <UserGrowth />
           <div className="grid grid-cols-1 md:grid-cols-5 gap-4 md:gap-6">

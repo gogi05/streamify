@@ -16,7 +16,7 @@ const Tooltip = ({
   const formatValue = valueFormatter || ((val) => val.toLocaleString());
 
   return (
-    <div className="bg-white border border-gray-200 rounded-lg p-3 shadow-sm min-w-[150px] z-50">
+    <div className="bg-card border border-gray-200 rounded-lg p-3 shadow-sm min-w-[150px] z-50">
       <p className="font-medium text-gray-600 mb-2">{formatLabel(label)}</p>
       {payload.map((entry, index) => (
         <div

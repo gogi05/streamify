@@ -20,8 +20,8 @@ const Header = () => {
             href={link.href}
             className={`transition-colors ${
               link.isActive
-                ? "text-gray-900 hover:text-black"
-                : "text-gray-500 hover:text-black"
+                ? "text-primary"
+                : "text-gray-500 hover:text-primary"
             }`}
           >
             {link.name}

@@ -10,7 +10,7 @@ import useFetchData from "../../hooks/useFetchData";
 
 const TopStreamedSongs = () => {
   const { isLoading, data, error } = useFetchData(
-    "http://localhost:5000/topStreamedSongs"
+    `${process.env.REACT_APP_API_URL}/topStreamedSongs`
   );
 
   return (

@@ -9,7 +9,7 @@ const BaseButton = ({
     <button
       onClick={onClick}
       disabled={disabled}
-      className={`font-semibold transition duration-150 ease-in-out ${className} ${
+      className={`font-semibold px-4 py-2 rounded transition duration-150 ease-in-out ${className} ${
         disabled ? "disabled:cursor-not-allowed disabled:opacity-50" : ""
       }`}
       {...props}

@@ -20,7 +20,6 @@ const RevenueDistributionChart = ({ data }) => {
 
   const onPieClick = useCallback(
     (data) => {
-      console.log("Selected Stream:", data.source);
       selectRevenueStream(data.source);
     },
     [selectRevenueStream]

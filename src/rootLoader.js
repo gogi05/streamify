@@ -4,7 +4,7 @@ import SkeletonLoader from "./components/Loader";
 const LayoutSkeletonLoader = () => {
   return (
     <div className="flex flex-col min-h-screen">
-      <div className="relative md:hidden flex items-center justify-between px-4 h-16 w-full bg-white">
+      <div className="relative md:hidden flex items-center justify-between px-4 h-16 w-full bg-card">
         <div className="flex items-center">
           <SkeletonLoader width="40px" height="40px" borderRadius="50%" />
         </div>
@@ -14,7 +14,7 @@ const LayoutSkeletonLoader = () => {
         </div>
       </div>
 
-      <header className="hidden md:flex items-center justify-between w-full px-4 py-2 bg-white">
+      <header className="hidden md:flex items-center justify-between w-full px-4 py-2 bg-card">
         <div className="flex items-center gap-2">
           <SkeletonLoader width="40px" height="40px" borderRadius="50%" />
           <SkeletonLoader width="100px" height="20px" borderRadius="4px" />

@@ -11,7 +11,7 @@ import { USER_CHART_HEIGHT } from "./constants";
 
 const UserGrowth = () => {
   const { isLoading, data, error } = useFetchData(
-    "http://localhost:5000/userGrowth"
+    `${process.env.REACT_APP_API_URL}/userGrowth`
   );
 
   return (

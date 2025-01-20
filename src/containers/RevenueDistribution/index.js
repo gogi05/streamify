@@ -11,8 +11,8 @@ const RevenueDistribution = () => {
     isLoading,
     data = [],
     error,
-  } = useFetchData("http://localhost:5000/revenueDistribution");
-  console.log(data);
+  } = useFetchData(`${process.env.REACT_APP_API_URL}/revenueDistribution`);
+
   return (
     <CardLayout>
       <CardHeading className="text-lg">Revenue Distribution</CardHeading>

@@ -4,7 +4,7 @@ import { KEY_METRICS_ICONS } from "./constants";
 
 const KeyMetrics = () => {
   const { isLoading, data, error } = useFetchData(
-    "http://localhost:5000/keyMetrics"
+    `${process.env.REACT_APP_API_URL}/keyMetrics`
   );
 
   return (
