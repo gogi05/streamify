@@ -4,7 +4,7 @@ import {
   CardDescription,
 } from "../../components/Card";
 import useFetchData from "../../hooks/useFetchData";
-import RevenueDistributionChart from "./revenueDistributionChart";
+import RevenueDistributionChart from "./components/revenueDistributionChart";
 
 const RevenueDistribution = () => {
   const {

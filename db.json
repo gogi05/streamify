@@ -57,7 +57,7 @@
       "dateStreamed": "2025-01-01",
       "streamCount": 10000,
       "userId": 1,
-      "revenueSource": "Subscriptions"
+      "source": "Subscriptions"
     },
     {
       "songName": "Save Your Tears",
@@ -65,7 +65,7 @@
       "dateStreamed": "2025-01-02",
       "streamCount": 20000,
       "userId": 2,
-      "revenueSource": "Advertisement"
+      "source": "Advertisement"
     },
     {
       "songName": "Levitating",
@@ -73,7 +73,7 @@
       "dateStreamed": "2025-01-03",
       "streamCount": 15000,
       "userId": 3,
-      "revenueSource": "Merchandise"
+      "source": "Merchandise"
     },
     {
       "songName": "Stay",
@@ -81,7 +81,7 @@
       "dateStreamed": "2025-01-04",
       "streamCount": 8000,
       "userId": 4,
-      "revenueSource": "Affiliate Marketing"
+      "source": "Affiliate Marketing"
     },
     {
       "songName": "Montero (Call Me By Your Name)",
@@ -89,7 +89,7 @@
       "dateStreamed": "2025-01-05",
       "streamCount": 9500,
       "userId": 5,
-      "revenueSource": "Subscriptions"
+      "source": "Subscriptions"
     },
     {
       "songName": "Peaches",
@@ -97,7 +97,7 @@
       "dateStreamed": "2025-01-06",
       "streamCount": 10000,
       "userId": 6,
-      "revenueSource": "Advertisement"
+      "source": "Advertisement"
     },
     {
       "songName": "Good 4 U",
@@ -105,7 +105,7 @@
       "dateStreamed": "2025-01-07",
       "streamCount": 12000,
       "userId": 7,
-      "revenueSource": "Merchandise"
+      "source": "Merchandise"
     },
     {
       "songName": "Kiss Me More",
@@ -113,7 +113,7 @@
       "dateStreamed": "2025-01-08",
       "streamCount": 11000,
       "userId": 8,
-      "revenueSource": "Affiliate Marketing"
+      "source": "Affiliate Marketing"
     },
     {
       "songName": "Heat Waves",
@@ -121,7 +121,7 @@
       "dateStreamed": "2025-01-09",
       "streamCount": 13000,
       "userId": 9,
-      "revenueSource": "Subscriptions"
+      "source": "Subscriptions"
     },
     {
       "songName": "Industry Baby",
@@ -129,7 +129,7 @@
       "dateStreamed": "2025-01-10",
       "streamCount": 14000,
       "userId": 10,
-      "revenueSource": "Advertisement"
+      "source": "Advertisement"
     },
     {
       "songName": "As It Was",
@@ -137,7 +137,7 @@
       "dateStreamed": "2025-01-11",
       "streamCount": 16000,
       "userId": 11,
-      "revenueSource": "Subscriptions"
+      "source": "Subscriptions"
     },
     {
       "songName": "Shivers",
@@ -145,7 +145,7 @@
       "dateStreamed": "2025-01-12",
       "streamCount": 11000,
       "userId": 12,
-      "revenueSource": "Affiliate Marketing"
+      "source": "Affiliate Marketing"
     },
     {
       "songName": "Bad Habits",
@@ -153,7 +153,7 @@
       "dateStreamed": "2025-01-13",
       "streamCount": 10500,
       "userId": 13,
-      "revenueSource": "Merchandise"
+      "source": "Merchandise"
     },
     {
       "songName": "Montero (Call Me By Your Name)",
@@ -161,7 +161,7 @@
       "dateStreamed": "2025-01-14",
       "streamCount": 20000,
       "userId": 14,
-      "revenueSource": "Subscriptions"
+      "source": "Subscriptions"
     },
     {
       "songName": "Stay",
@@ -169,7 +169,7 @@
       "dateStreamed": "2025-01-15",
       "streamCount": 15000,
       "userId": 15,
-      "revenueSource": "Advertisement"
+      "source": "Advertisement"
     },
     {
       "songName": "Levitating",
@@ -177,7 +177,7 @@
       "dateStreamed": "2025-01-16",
       "streamCount": 13000,
       "userId": 16,
-      "revenueSource": "Affiliate Marketing"
+      "source": "Affiliate Marketing"
     },
     {
       "songName": "Blinding Lights",
@@ -185,7 +185,7 @@
       "dateStreamed": "2025-01-17",
       "streamCount": 18000,
       "userId": 17,
-      "revenueSource": "Merchandise"
+      "source": "Merchandise"
     },
     {
       "songName": "Save Your Tears",
@@ -193,7 +193,7 @@
       "dateStreamed": "2025-01-18",
       "streamCount": 14000,
       "userId": 18,
-      "revenueSource": "Subscriptions"
+      "source": "Subscriptions"
     },
     {
       "songName": "Heat Waves",
@@ -201,7 +201,7 @@
       "dateStreamed": "2025-01-19",
       "streamCount": 17000,
       "userId": 19,
-      "revenueSource": "Advertisement"
+      "source": "Advertisement"
     },
     {
       "songName": "Industry Baby",
@@ -209,7 +209,7 @@
       "dateStreamed": "2025-01-20",
       "streamCount": 20000,
       "userId": 20,
-      "revenueSource": "Affiliate Marketing"
+      "source": "Affiliate Marketing"
     },
     {
       "songName": "Good 4 U",
@@ -217,7 +217,7 @@
       "dateStreamed": "2025-01-21",
       "streamCount": 14000,
       "userId": 21,
-      "revenueSource": "Merchandise"
+      "source": "Merchandise"
     },
     {
       "songName": "Shivers",
@@ -225,7 +225,7 @@
       "dateStreamed": "2025-01-22",
       "streamCount": 13000,
       "userId": 22,
-      "revenueSource": "Subscriptions"
+      "source": "Subscriptions"
     },
     {
       "songName": "Blinding Lights",
@@ -233,7 +233,7 @@
       "dateStreamed": "2025-01-23",
       "streamCount": 22000,
       "userId": 23,
-      "revenueSource": "Advertisement"
+      "source": "Advertisement"
     },
     {
       "songName": "Levitating",
@@ -241,7 +241,7 @@
       "dateStreamed": "2025-01-24",
       "streamCount": 18000,
       "userId": 24,
-      "revenueSource": "Affiliate Marketing"
+      "source": "Affiliate Marketing"
     },
     {
       "songName": "Save Your Tears",
@@ -249,7 +249,7 @@
       "dateStreamed": "2025-01-25",
       "streamCount": 19000,
       "userId": 25,
-      "revenueSource": "Merchandise"
+      "source": "Merchandise"
     },
     {
       "songName": "Stay",
@@ -257,7 +257,7 @@
       "dateStreamed": "2025-01-26",
       "streamCount": 17000,
       "userId": 26,
-      "revenueSource": "Subscriptions"
+      "source": "Subscriptions"
     },
     {
       "songName": "Heat Waves",
@@ -265,7 +265,7 @@
       "dateStreamed": "2025-01-27",
       "streamCount": 15000,
       "userId": 27,
-      "revenueSource": "Advertisement"
+      "source": "Advertisement"
     },
     {
       "songName": "Industry Baby",
@@ -273,7 +273,7 @@
       "dateStreamed": "2025-01-28",
       "streamCount": 16000,
       "userId": 28,
-      "revenueSource": "Affiliate Marketing"
+      "source": "Affiliate Marketing"
     },
     {
       "songName": "Montero (Call Me By Your Name)",
@@ -281,7 +281,7 @@
       "dateStreamed": "2025-01-29",
       "streamCount": 25000,
       "userId": 29,
-      "revenueSource": "Merchandise"
+      "source": "Merchandise"
     },
     {
       "songName": "Peaches",
@@ -289,7 +289,7 @@
       "dateStreamed": "2025-01-30",
       "streamCount": 14000,
       "userId": 30,
-      "revenueSource": "Subscriptions"
+      "source": "Subscriptions"
     },
     {
       "songName": "Kiss Me More",
@@ -297,7 +297,31 @@
       "dateStreamed": "2025-01-31",
       "streamCount": 11000,
       "userId": 31,
-      "revenueSource": "Affiliate Marketing"
+      "source": "Affiliate Marketing"
+    },
+    {
+      "songName": "Flowers",
+      "artist": "Miley Cyrus",
+      "dateStreamed": "2025-02-01",
+      "streamCount": 12000,
+      "userId": 32,
+      "source": "Advertisement"
+    },
+    {
+      "songName": "Sunroof",
+      "artist": "Nicky Youre & Dazy",
+      "dateStreamed": "2025-02-02",
+      "streamCount": 8000,
+      "userId": 33,
+      "source": "Subscriptions"
+    },
+    {
+      "songName": "Golden Hour",
+      "artist": "JVKE",
+      "dateStreamed": "2025-02-03",
+      "streamCount": 12000,
+      "userId": 34,
+      "source": "Affiliate Marketing"
     }
   ]
 }

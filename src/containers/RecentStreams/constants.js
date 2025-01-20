@@ -6,6 +6,8 @@ export const TABLE_HEADING = [
   { key: "streamCount", displayName: "Streams", sort: true },
 ];
 
+export const ITEMS_PER_PAGE = 10;
+
 export const SORT_INITIAL_STATE = {
   key: "",
   direction: "desc",

@@ -7,3 +7,9 @@
     @apply font-sans;
   }
 }
+
+/* Disable focus outline for the PieChart */
+svg:focus,
+g:focus {
+  outline: none;
+}
