@@ -7,11 +7,7 @@ import useFetchData from "../../hooks/useFetchData";
 import RevenueDistributionChart from "./components/revenueDistributionChart";
 
 const RevenueDistribution = () => {
-  const {
-    isLoading,
-    data = [],
-    error,
-  } = useFetchData(`${process.env.REACT_APP_API_URL}/revenueDistribution`);
+  const { isLoading, data, error } = useFetchData("/api/revenueDistribution");
 
   return (
     <CardLayout>

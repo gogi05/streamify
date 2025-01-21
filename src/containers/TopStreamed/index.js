@@ -9,9 +9,7 @@ import TopStreamedSongsChart from "./topStreamedSongsChart";
 import useFetchData from "../../hooks/useFetchData";
 
 const TopStreamedSongs = () => {
-  const { isLoading, data, error } = useFetchData(
-    `${process.env.REACT_APP_API_URL}/topStreamedSongs`
-  );
+  const { isLoading, data, error } = useFetchData("/api/topStreamedSongs");
 
   return (
     <CardLayout>

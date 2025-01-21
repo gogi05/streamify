@@ -16,11 +16,7 @@ const RecentStreams = () => {
   const [pageSize] = useState(10);
   const [searchQuery, setSearchQuery] = useState("");
 
-  const {
-    isLoading,
-    data = [],
-    error,
-  } = useFetchData(`${process.env.REACT_APP_API_URL}/recentStreams`);
+  const { isLoading, data, error } = useFetchData("/api/recentStreams");
 
   const filteredData = useFilteredData(
     data,

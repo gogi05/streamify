@@ -10,10 +10,7 @@ import useFetchData from "../../hooks/useFetchData";
 import { USER_CHART_HEIGHT } from "./constants";
 
 const UserGrowth = () => {
-  const { isLoading, data, error } = useFetchData(
-    `${process.env.REACT_APP_API_URL}/userGrowth`
-  );
-
+  const { isLoading, data, error } = useFetchData("/api/userGrowth");
   return (
     <CardLayout>
       <CardHeading className="text-lg">User Growth</CardHeading>

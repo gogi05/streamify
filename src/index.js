@@ -4,6 +4,10 @@ import "./index.css";
 import App from "./App";
 import { RevenueContextProvider } from "./context/revenueStreamContext";
 import reportWebVitals from "./reportWebVitals";
+import { makeServer } from "./mirage/server";
+
+// Start MirageJS server
+makeServer();
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
