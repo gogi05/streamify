@@ -1,6 +1,6 @@
 # 🎵 Streamify  
 
-A sleek and interactive **music streaming analytics dashboard** for monitoring and analyzing streaming data. This project was created as part of a take-home assessment, showcasing a seamless blend of design and functionality.  
+A sleek and interactive **music streaming analytics dashboard** for monitoring and analyzing streaming data. This project was created to gain hands-on experience with Recharts and explore various functionalities, showcasing a seamless blend of design and functionality.
 
 ---
 
