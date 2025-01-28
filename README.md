@@ -15,7 +15,7 @@ A sleek and interactive **music streaming analytics dashboard** for monitoring a
 - **[React](https://reactjs.org/):** Powering the single-page application.  
 - **[Recharts](https://recharts.org/):** Delivering beautiful and dynamic line, bar, and pie charts.  
 - **[Tailwind CSS](https://tailwindcss.com/):** Providing modern styles and a responsive layout.  
-- **[JSON Server](https://miragejs.com/):** Serving mock data with ease.  
+- **[MirageJS](https://miragejs.com/):** Serving mock data with ease.  
 
 ---
 
